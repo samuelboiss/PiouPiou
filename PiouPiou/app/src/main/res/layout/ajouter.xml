@@ -52,13 +52,40 @@
     <Button
         android:layout_width="316dp"
         android:layout_height="68dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="328dp"
         android:layout_marginEnd="56dp"
         android:backgroundTint="@color/button_gray"
         android:drawableRight="@drawable/plus"
         android:drawablePadding="10dp"
         android:gravity="left"
         android:text="Ajouter un site d'observation"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="316dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawableRight="@drawable/plus"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:text="Ajouter autre élement"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="316dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="528dp"
+        android:layout_marginEnd="48dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:text="Mes brouillons"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
