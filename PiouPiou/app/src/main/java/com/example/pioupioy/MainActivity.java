@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         findViewById(R.id.btn2).setOnClickListener( clic -> {
             Intent intent=new Intent(getApplicationContext(),inscrire.class);
-            System.out.println(intent);
             startActivity(intent);
         });
 

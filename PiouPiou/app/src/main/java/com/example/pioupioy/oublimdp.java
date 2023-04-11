@@ -13,7 +13,6 @@ public class oublimdp extends AppCompatActivity {
         setContentView(R.layout.oublimdp);
         findViewById(R.id.btn).setOnClickListener( clic -> {
             Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-            System.out.println(intent);
             startActivity(intent);
         });
     }

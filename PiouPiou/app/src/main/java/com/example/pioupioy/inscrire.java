@@ -12,9 +12,7 @@ public class inscrire extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inscrire);
         findViewById(R.id.btn).setOnClickListener( clic -> {
-            System.out.println("1");
             Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-            System.out.println(intent);
             startActivity(intent);
         });
     }
