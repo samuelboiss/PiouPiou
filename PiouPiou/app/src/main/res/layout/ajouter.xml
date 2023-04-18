@@ -25,6 +25,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/titre_ajouter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/ajouter"
@@ -48,6 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/ajouter_un_recensement"
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:layout_marginTop="144dp"
@@ -62,6 +64,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
+        android:id="@+id/ajouter_un_repere"
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:layout_marginTop="236dp"
@@ -76,6 +79,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/ajouter_un_site_d_observation"
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:layout_marginTop="328dp"
@@ -90,6 +94,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/ajouter_autre_element"
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:layout_marginTop="420dp"
@@ -104,6 +109,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/mes_brouillons"
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:layout_marginTop="536dp"
@@ -117,6 +123,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/retour"
         android:layout_width="129dp"
         android:layout_height="38dp"
         android:layout_marginTop="664dp"
