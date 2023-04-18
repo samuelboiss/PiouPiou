@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".inscrire"
+            android:name=".Inscrire"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.inscrire" />
@@ -32,7 +32,7 @@
         </activity>
 
         <activity
-            android:name=".oublimdp"
+            android:name=".Oublimdp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.oublimdp" />

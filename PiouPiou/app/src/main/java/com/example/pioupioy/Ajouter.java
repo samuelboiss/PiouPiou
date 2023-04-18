@@ -5,13 +5,12 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-public class inscrire extends AppCompatActivity {
+public class Ajouter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.inscrire);
-        findViewById(R.id.btn).setOnClickListener( clic -> {
+        setContentView(R.layout.ajouter);
+        findViewById(R.id.ajouter_un_recensement).setOnClickListener( clic -> {
             System.out.println("1");
             Intent intent=new Intent(getApplicationContext(),MainActivity.class);
             System.out.println(intent);
