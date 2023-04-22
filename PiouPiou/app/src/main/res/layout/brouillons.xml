@@ -7,6 +7,20 @@
     android:background="@color/background_green"
     android:alpha="0.7">
 
+    <Button
+        android:id="@+id/retour2"
+        android:layout_width="129dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="664dp"
+        android:layout_marginEnd="140dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Retour"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="214dp"
         android:layout_height="57dp"
@@ -44,5 +58,90 @@
         app:layout_constraintHorizontal_bias="0.752"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="228dp"
+        android:layout_height="239dp"
+        android:background="@color/white"
+        android:gravity="left"
+        android:radius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/retour2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="wrap">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="223dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_width="204dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="@color/button_gray"
+            android:text="Pigeon ramier"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="39dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="204dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/button_gray"
+            android:text="Nombre : 4"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="77dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="204dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/button_gray"
+            android:text="Direction : sud-est"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="115dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="204dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/button_gray"
+            android:text="Météo : nuageux"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="153dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="204dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/button_gray"
+            android:text="Zone chassable : Oui"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="191dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
