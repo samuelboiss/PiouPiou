@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_green"
+    android:alpha="0.7">
+
+
+    <LinearLayout
+        android:layout_width="214dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="628dp"
+        android:background="@color/button_gray"
+
+        android:textColor="@color/black"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titre_ajouter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/ajouter"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="64dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/white"
+        android:src="@drawable/pioupiou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ajouter_un_recensement"
+        android:layout_width="316dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawableRight="@drawable/plus"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:text="Ajouter un recensement"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/ajouter_un_repere"
+        android:layout_width="316dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawableRight="@drawable/plus"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:text="Ajouter un repère"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ajouter_un_site_d_observation"
+        android:layout_width="316dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawableRight="@drawable/plus"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:text="Ajouter un site d'observation"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ajouter_autre_element"
+        android:layout_width="316dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawableRight="@drawable/plus"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:text="Ajouter autre élement"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mes_brouillons"
+        android:layout_width="316dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:text="Mes brouillons"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/retour"
+        android:layout_width="129dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="664dp"
+        android:layout_marginEnd="140dp"
+        android:backgroundTint="@color/button_gray"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="Retour"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
