@@ -24,6 +24,11 @@ public class MapActivity extends AppCompatActivity {
 
     private MapView map;
 
+    // TODO : change for geolocation
+    private static final double DEFAULT_LATITUDE = 43.6152209;
+    private static final double DEFAULT_LONGITUDE = 7.0727436;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +39,7 @@ public class MapActivity extends AppCompatActivity {
         map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setBuiltInZoomControls(true);
-        GeoPoint startPoint = new GeoPoint(43.6152209, 7.0727436);
+        GeoPoint startPoint = new GeoPoint(DEFAULT_LATITUDE, DEFAULT_LONGITUDE);
         IMapController mapController = (MapController) map.getController();
         mapController.setZoom(18.0);
         mapController.setCenter(startPoint);
