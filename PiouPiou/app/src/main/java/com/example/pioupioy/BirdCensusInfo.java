@@ -27,14 +27,20 @@ public class BirdCensusInfo extends Fragment {
         View view = inflater.inflate(R.layout.fragment_bird_census_info, container, false);
 
         if (birdCensus != null) {
+
+            String numberOfBirdStr = "Nombre : " + birdCensus.getNumberOfBird();
+            String isHuntableStr;
             ((ImageView) view.findViewById(R.id.image)).setImageBitmap(birdCensus.getBitmapImage());
             ((TextView) view.findViewById(R.id.birdName)).setText(birdCensus.getName());
-            ((TextView) view.findViewById(R.id.numberOfBird)).setText(view.findViewById(R.id.numberOfBird).toString() + birdCensus.getNumberOfBird());
-            if (birdCensus.isHuntable())
-                ((TextView) view.findViewById(R.id.huntable_area)).setText(view.findViewById(R.id.numberOfBird).toString() + "Oui");
-            else
-                ((TextView) view.findViewById(R.id.huntable_area)).setText(view.findViewById(R.id.numberOfBird).toString() + "Non");
-            ((TextView) view.findViewById(R.id.date)).setText(birdCensus.getFormattedTime());
+            ((TextView) view.findViewById(R.id.numberOfBird)).setText(numberOfBirdStr);
+            if (birdCensus.isHuntable()) {
+                isHuntableStr = "Chassable : oui";
+                ((TextView) view.findViewById(R.id.huntable_area)).setText(isHuntableStr);
+            } else {
+                isHuntableStr = "Chassable : non";
+                ((TextView) view.findViewById(R.id.huntable_area)).setText(isHuntableStr);
+                ((TextView) view.findViewById(R.id.date)).setText(birdCensus.getFormattedTime());
+            }
         }
         Button closeButton = view.findViewById(R.id.close);
         closeButton.setOnClickListener(new View.OnClickListener() {
