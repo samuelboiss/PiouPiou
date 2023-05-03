@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#72CF4D"
+    tools:context=".LateralMenu">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:src="@drawable/pioupiou"
+        android:layout_height="75dp"
+        android:layout_width="75dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/parameter"
+        android:src="@drawable/parameter"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/profile"
+        android:src="@drawable/profile"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/parameter"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/grey"
+        android:drawableLeft="@drawable/add"
+        android:layout_marginTop="25dp"
+        android:text="Ajouter"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile"/>
+
+    <Button
+        android:id="@+id/button_draft"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:text="Mes Brouillons"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/grey"
+        android:drawableLeft="@drawable/draft"
+
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_add"/>
+
+
+    <Button
+        android:id="@+id/button_history"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/grey"
+        android:drawableLeft="@drawable/history"
+        android:text="Historique"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+
+        android:textSize="22dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_draft" />
+
+    <Button
+        android:id="@+id/button_alerts"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/grey"
+        android:drawableLeft="@drawable/alerts"
+        android:layout_marginTop="25dp"
+        android:text="Alertes"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_history"/>
+
+    <Button
+        android:id="@+id/button_calendar"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/grey"
+        android:drawableLeft="@drawable/calendar"
+        android:layout_marginTop="25dp"
+        android:text="Calendrier"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_alerts"/>
+
+    <Button
+        android:id="@+id/button_stats"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/grey"
+        android:drawableLeft="@drawable/stats"
+        android:layout_marginTop="25dp"
+        android:text="Statistiques"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_calendar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
