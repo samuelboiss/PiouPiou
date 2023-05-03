@@ -59,10 +59,11 @@
         android:id="@+id/button_draft"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:backgroundTint="@color/grey"
-        android:drawableLeft="@drawable/add"
+        android:text="Mes Brouillons"
         android:layout_marginTop="25dp"
-        android:text="Mes brouillons"
+        android:backgroundTint="@color/grey"
+        android:drawableLeft="@drawable/draft"
+
         android:textSize="22dp"
         android:textColor="@color/black"
         android:textAllCaps="false"
@@ -70,27 +71,28 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_add"/>
 
+
     <Button
         android:id="@+id/button_history"
         android:layout_width="300dp"
         android:layout_height="70dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/grey"
-        android:drawableLeft="@drawable/add"
-        android:layout_marginTop="25dp"
+        android:drawableLeft="@drawable/history"
         android:text="Historique"
-        android:textSize="22dp"
-        android:textColor="@color/black"
         android:textAllCaps="false"
+        android:textColor="@color/black"
 
+        android:textSize="22dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_draft"/>
+        app:layout_constraintTop_toBottomOf="@id/button_draft" />
 
     <Button
         android:id="@+id/button_alerts"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/grey"
-        android:drawableLeft="@drawable/add"
+        android:drawableLeft="@drawable/alerts"
         android:layout_marginTop="25dp"
         android:text="Alertes"
         android:textSize="22dp"
@@ -105,7 +107,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/grey"
-        android:drawableLeft="@drawable/add"
+        android:drawableLeft="@drawable/calendar"
         android:layout_marginTop="25dp"
         android:text="Calendrier"
         android:textSize="22dp"
@@ -120,7 +122,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/grey"
-        android:drawableLeft="@drawable/add"
+        android:drawableLeft="@drawable/stats"
         android:layout_marginTop="25dp"
         android:text="Statistiques"
         android:textSize="22dp"
