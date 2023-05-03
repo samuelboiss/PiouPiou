@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">PiouPioy</string>
+    <string name="search_label">Search...</string>
+    <string name="search_hint">Recherche</string>
+    <string name="birdNumber">Nombre :</string>
+    <string name="huntable">Chassable :</string>
     <string name="ajouter">Ajouter</string>
     <string name="Mes_Brouillons">Mes Brouillons</string>
     <string name="date">Le 12/12/2019</string>
