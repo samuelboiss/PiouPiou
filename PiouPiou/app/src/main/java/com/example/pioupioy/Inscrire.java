@@ -29,10 +29,10 @@ public class Inscrire extends AppCompatActivity {
     private Button mButtonRegister;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.inscrire)
-        ;
+        setContentView(R.layout.inscrire);
+
         mAuth = FirebaseAuth.getInstance();
 
         FirebaseApp.initializeApp(this);
@@ -51,29 +51,30 @@ public class Inscrire extends AppCompatActivity {
                 String password = mEditTextPassword.getText().toString();
                 String passwordConfirm = mEditPassWordConfirm.getText().toString();
 
-                mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (pseudo.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty()) {
-                                Toast.makeText(Inscrire.this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
-                            } else if (password.equals(passwordConfirm)) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(Inscrire.this, "Inscription réussie", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                    startActivity(intent);
-                                } else {
-                                    String error = Objects.requireNonNull(task.getException()).getMessage();
-                                    Toast.makeText(Inscrire.this,"Erreur : " + error, Toast.LENGTH_SHORT).show();
+                if (pseudo.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty()) {
+                    Toast.makeText(Inscrire.this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
+                } else if (password.equals(passwordConfirm)) {
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(Inscrire.this, "Inscription réussie", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        String error = Objects.requireNonNull(task.getException()).getMessage();
+                                        Toast.makeText(Inscrire.this, "Erreur : " + error, Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            } else {
-                                Toast.makeText(Inscrire.this, "Les mots de passe ne correspondent pas", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                            });
+                } else {
+                    Toast.makeText(Inscrire.this, "Les mots de passe ne correspondent pas", Toast.LENGTH_SHORT).show();
+                }
             }
-        });
+        } );
     }
+}
 
 /*
         findViewById(R.id.btn).setOnClickListener( clic -> {
@@ -98,4 +99,4 @@ public class Inscrire extends AppCompatActivity {
         });
     }
     */
-}
+
