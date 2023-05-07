@@ -1,3 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="direction_list">
+        <item>Nord</item>
+        <item>Sud</item>
+        <item>Est</item>
+        <item>Ouest</item>
+        <item>Sud-Est</item>
+        <item>Sud-Ouest</item>
+        <item>Nord-Est</item>
+        <item>Nord-Ouest</item>
+    </string-array>
+
+    <string-array name="meteo_list">
+        <item>Soleil</item>
+        <item>Pluie</item>
+        <item>Nuageux</item>
+    </string-array>
+
+    <string-array name="huntable_list">
+        <item>Oui</item>
+        <item>Non</item>
+    </string-array>
 </resources>
