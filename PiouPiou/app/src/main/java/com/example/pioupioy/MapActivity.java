@@ -3,10 +3,14 @@ package com.example.pioupioy;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -112,12 +116,24 @@ public class MapActivity extends AppCompatActivity {
         setContentView(R.layout.map_page);
 
         findViewById(R.id.birdCensus_info).setVisibility(View.INVISIBLE);
+        findViewById(R.id.navBar).setVisibility(View.INVISIBLE);
 
         setupMap();
 
         setMapCenterPosition(DEFAULT_LATITUDE, DEFAULT_LONGITUDE);
 
         setMarker();
+
+        ImageView menuButton = findViewById(R.id.menu_button);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.navBar).setVisibility(View.VISIBLE);
+                map.setClickable(false);
+                map.setEnabled(false);
+            }
+        });
+
     }
 
     @Override
