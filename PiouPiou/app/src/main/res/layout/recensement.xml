@@ -180,14 +180,13 @@
         android:id="@+id/enregistrer"
         android:layout_width="316dp"
         android:layout_height="50dp"
-        android:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/button_gray"
         android:text="Enregistrer"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/retour"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_recensements" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_recensements"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/retour"

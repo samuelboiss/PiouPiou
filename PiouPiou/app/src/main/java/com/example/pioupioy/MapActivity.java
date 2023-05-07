@@ -133,6 +133,7 @@ public class MapActivity extends AppCompatActivity {
                 map.setEnabled(false);
             }
         });
+
     }
 
     @Override
