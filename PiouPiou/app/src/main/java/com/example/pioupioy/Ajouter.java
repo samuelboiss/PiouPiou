@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -24,14 +25,16 @@ public class Ajouter extends AppCompatActivity {
     public static final String CHANNEL_3_ID = "channel HIGH";
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         createNotificationChannels();
         setContentView(R.layout.ajouter);
         findViewById(R.id.ajouter_un_recensement).setOnClickListener( clic -> {
-            //Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-            //startActivity(intent);
+            Intent intent=new Intent(getApplicationContext(),Recensement.class);
+            startActivity(intent);
             sendNotificationOnChannel("Recensement","Vous avez bien ajouter un recensement", "LOW");
         });
     }

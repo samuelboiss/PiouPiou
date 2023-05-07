@@ -10,4 +10,7 @@
     <string name="Mes_Brouillons">Mes Brouillons</string>
     <string name="date">Le 12/12/2019</string>
     <string name="Alertes">Alertes</string>
+    <string name="direction">Veuillez choisir une direction</string>
+    <string name="meteo">Veuillez choisir une météo</string>
+    <string name="huntable_spinner">La zone est chassable</string>
 </resources>
