@@ -37,6 +37,11 @@ public class Ajouter extends AppCompatActivity {
             startActivity(intent);
             sendNotificationOnChannel("Recensement","Vous avez bien ajouter un recensement", "LOW");
         });
+
+        findViewById(R.id.ajouter_un_contact).setOnClickListener( clic -> {
+            Intent intent=new Intent(getApplicationContext(),AjouterContact.class);
+            startActivity(intent);
+        });
     }
 
     private void createNotificationChannels() {
