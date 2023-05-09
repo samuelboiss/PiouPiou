@@ -2,8 +2,14 @@ package com.example.pioupioy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -67,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, "Connexion réussie", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), MapActivity.class);
                                         startActivity(intent);
+
                                     }
                                 }
                             });
@@ -74,4 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

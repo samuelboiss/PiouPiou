@@ -1,6 +1,11 @@
 package com.example.pioupioy;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +14,7 @@ import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -18,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Recensement extends AppCompatActivity {
 
@@ -80,9 +87,56 @@ public class Recensement extends AppCompatActivity {
                 // Redirection vers la page de la carte
                 Intent intent = new Intent(Recensement.this, MapActivity.class);
                 startActivity(intent);
+                sendNotificationOnChannel("Recensement","Vous avez bien réussi votre recensement", "LOW");
+
             }
         });
+    }
+    public void createNotificationChannels() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // Créer le NotificationChannel, seulement pour API 26+
+            NotificationChannel channel1 = createNotificationChannel( Inscrire.CHANNEL_1_ID,"Channel 1",
+                    NotificationManager.IMPORTANCE_LOW,
+                    "This Channel has low priority");
+            NotificationChannel channel2 = createNotificationChannel( Inscrire.CHANNEL_2_ID,"Channel 2",
+                    NotificationManager.IMPORTANCE_DEFAULT,
+                    "This Channel has default priority");
+            NotificationChannel channel3 = createNotificationChannel( Inscrire.CHANNEL_3_ID,"Channel 2",
+                    NotificationManager.IMPORTANCE_HIGH,
+                    "This Channel has high priority");
+            // Enregister le canal sur le système : attention de ne plus rien modifier après
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            Objects.requireNonNull(manager).createNotificationChannel(channel1);
+            Objects.requireNonNull(manager).createNotificationChannel(channel2);
+            Objects.requireNonNull(manager).createNotificationChannel(channel3);
+        }
+    }
 
+    public NotificationChannel createNotificationChannel(String channelId, CharSequence name, int importance, String
+            channelDescription) {
+        // Créer le NotificationChannel, seulement pour API 26+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, name, importance);
+            channel.setDescription(channelDescription);
+            return channel;
+        }
+        return null;
+    }
 
+    public void sendNotificationOnChannel(String title, String content, String channelId) {
+        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pioupiou);
+
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(this, channelId)
+                .setContentTitle(title)
+                .setContentText(content)
+                .setSmallIcon(R.drawable.pioupiou)
+                .setLargeIcon(largeIcon);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, "notif", NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+        }
+        notificationManager.notify(0, notification.build());
     }
 }
