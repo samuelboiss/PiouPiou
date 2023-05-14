@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:id="@+id/bouton_titre"
-        android:layout_width="214dp"
-        android:layout_height="57dp"
+        android:layout_width="630dp"
+        android:layout_height="115dp"
         android:layout_marginStart="39dp"
         android:layout_marginTop="41dp"
         android:layout_marginEnd="5dp"
@@ -28,8 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/ajouter"
+            android:textSize="45dp"
             android:textColor="@color/black"
-            android:textSize="20dp"
             android:gravity="center"
             />
     </LinearLayout>
@@ -37,8 +37,8 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="64dp"
-        android:layout_height="57dp"
+        android:layout_width="145dp"
+        android:layout_height="115dp"
         android:background="@color/white"
         android:src="@drawable/pioupiou"
         app:layout_constraintEnd_toEndOf="@id/ajouter_un_recensement"
@@ -47,85 +47,91 @@
 
     <Button
         android:id="@+id/ajouter_un_recensement"
-        android:layout_width="316dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="800dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="50dp"
         android:backgroundTint="@color/button_gray"
         android:drawableRight="@drawable/plus"
         android:drawablePadding="10dp"
-        android:gravity="left"
+        android:gravity="center"
         android:text="Ajouter un recensement"
+        android:textSize="32dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/bouton_titre"
-        app:layout_constraintStart_toStartOf="@id/bouton_titre"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/ajouter_un_repere"
-        android:layout_width="316dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="800dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="35dp"
         android:backgroundTint="@color/button_gray"
         android:drawableRight="@drawable/plus"
         android:drawablePadding="10dp"
-        android:gravity="left"
+        android:gravity="center"
         android:text="Ajouter un repère"
+        android:textSize="32dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/ajouter_un_recensement"
         app:layout_constraintStart_toStartOf="@id/ajouter_un_recensement" />
 
     <Button
         android:id="@+id/ajouter_un_site_d_observation"
-        android:layout_width="316dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="800dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="35dp"
         android:backgroundTint="@color/button_gray"
         android:drawableRight="@drawable/plus"
         android:drawablePadding="10dp"
-        android:gravity="left"
+        android:gravity="center"
         android:text="Ajouter un site d'observation"
+        android:textSize="32dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/ajouter_un_repere"
         app:layout_constraintStart_toStartOf="@id/ajouter_un_repere" />
 
     <Button
         android:id="@+id/ajouter_autre_element"
-        android:layout_width="316dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="800dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="35dp"
         android:backgroundTint="@color/button_gray"
         android:drawableRight="@drawable/plus"
         android:drawablePadding="10dp"
-        android:gravity="left"
+        android:gravity="center"
         android:text="Ajouter autre élement"
+        android:textSize="32dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/ajouter_un_site_d_observation"
         app:layout_constraintStart_toStartOf="@id/ajouter_un_site_d_observation" />
 
     <Button
         android:id="@+id/mes_brouillons"
-        android:layout_width="316dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="35dp"
+        android:layout_width="800dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/button_gray"
         android:drawablePadding="10dp"
-        android:gravity="left"
+        android:gravity="center"
         android:text="Mes brouillons"
+        android:textSize="32dp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/ajouter_autre_element"
         app:layout_constraintStart_toStartOf="@id/ajouter_autre_element" />
 
     <Button
         android:id="@+id/retour"
-        android:layout_width="129dp"
-        android:layout_height="38dp"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginRight="200dp"
         android:backgroundTint="@color/button_gray"
         android:drawablePadding="10dp"
         android:gravity="center"
         android:text="Retour"
         android:textColor="@color/black"
+        android:textSize="32dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
