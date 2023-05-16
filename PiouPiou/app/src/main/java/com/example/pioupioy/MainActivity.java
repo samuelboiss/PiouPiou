@@ -21,5 +21,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent=new Intent(getApplicationContext(),oublimdp.class);
             startActivity(intent);
         });
+
+        findViewById(R.id.btn4).setOnClickListener( clic -> {
+            Intent intent=new Intent(getApplicationContext(),GPSActivity.class);
+            startActivity(intent);
+        });
     }
 }
