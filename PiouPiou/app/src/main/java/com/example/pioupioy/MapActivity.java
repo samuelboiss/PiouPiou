@@ -79,7 +79,7 @@ public class MapActivity extends AppCompatActivity {
                                 new Date(),
                                 ItemType.CENSUS,
                                 byteArray,
-                                true
+                                true, "Beau", "Sud"
                         ), new GeoPoint(43.6185609290512, 7.073302138130848)
                 )
         );
@@ -89,7 +89,7 @@ public class MapActivity extends AppCompatActivity {
                                 new Date(),
                                 ItemType.OBSERVATION,
                                 byteArray,
-                                true
+                                true, "Beau", "Sud"
                         ), new GeoPoint(43.6185609290512, 7.063302138130848)
                 )
         );
