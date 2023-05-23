@@ -96,7 +96,14 @@ public class Recensement extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        Button retour=findViewById(R.id.retour);
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),MapActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
