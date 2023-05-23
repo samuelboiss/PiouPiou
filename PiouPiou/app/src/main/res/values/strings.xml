@@ -13,4 +13,5 @@
     <string name="direction">Veuillez choisir une direction</string>
     <string name="meteo">Veuillez choisir une météo</string>
     <string name="huntable_spinner">La zone est chassable</string>
+    <string name="zone_chassable_oui">Zone chassable : Oui</string>
 </resources>

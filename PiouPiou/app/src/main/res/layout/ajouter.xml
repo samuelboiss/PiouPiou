@@ -21,7 +21,7 @@
         android:textColor="@color/black"
         app:layout_constrainedHeight="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" >
 
         <TextView
             android:id="@+id/titre_ajouter"
@@ -31,6 +31,13 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:gravity="center"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             />
     </LinearLayout>
 
@@ -89,7 +96,7 @@
         app:layout_constraintStart_toStartOf="@id/ajouter_un_repere" />
 
     <Button
-        android:id="@+id/ajouter_autre_element"
+        android:id="@+id/ajouter_un_contact"
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:layout_marginTop="10dp"
@@ -97,7 +104,7 @@
         android:drawableRight="@drawable/plus"
         android:drawablePadding="10dp"
         android:gravity="left"
-        android:text="Ajouter autre élement"
+        android:text="Ajouter un Contact"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/ajouter_un_site_d_observation"
         app:layout_constraintStart_toStartOf="@id/ajouter_un_site_d_observation" />
