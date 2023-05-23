@@ -8,32 +8,30 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BirdCensus {
-    private String name;
-    private int numberOfBird;
-    private boolean huntable;
-    private Date date;
-    private ItemType type;
-    private byte[] image;
+    private final String name;
+    private final int numberOfBird;
+    private final boolean huntable;
+    private final Date date;
+    private final ItemType type;
+    private final byte[] image;
+
+    private String meteo;
+    private String direction;
 
 
-    public BirdCensus(String name, int numberOfBird, Date date, ItemType type, byte[] image, boolean huntable) {
+    public BirdCensus(String name, int numberOfBird, Date date, ItemType type, byte[] image, boolean huntable, String meteo, String direction) {
         this.name = name;
         this.numberOfBird = numberOfBird;
         this.date = date;
         this.type = type;
         this.image = image;
         this.huntable = huntable;
+        this.meteo = meteo;
+        this.direction = direction;
     }
 
-    public BirdCensus(String name, int numberOfBird, Date date, ItemType type, byte[] image) {
-        this.name = name;
-        this.numberOfBird = numberOfBird;
-        this.date = date;
-        this.type = type;
-        this.image = image;
-    }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -65,5 +63,13 @@ public class BirdCensus {
     public String getFormattedTime() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         return dateFormat.format(date);
+    }
+
+    public String getMeteo() {
+        return meteo;
+    }
+
+    public String getDirection() {
+        return direction;
     }
 }
