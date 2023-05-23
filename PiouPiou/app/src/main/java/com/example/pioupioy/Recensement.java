@@ -36,8 +36,8 @@ public class Recensement extends AppCompatActivity {
                 EditText dateEditText = findViewById(R.id.date);
                 String date = dateEditText.getText().toString();
 
-                EditText espèceEditText = findViewById(R.id.espece);
-                String espece = espèceEditText.getText().toString();
+                EditText especeEditText = findViewById(R.id.espece);
+                String espece = especeEditText.getText().toString();
 
                 EditText nombreEditText = findViewById(R.id.nombre);
                 int nombre = Integer.parseInt(nombreEditText.getText().toString());
