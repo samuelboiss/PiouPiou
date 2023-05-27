@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/bird_image"
         android:layout_width="145dp"
         android:layout_height="115dp"
         android:background="@color/white"
@@ -54,7 +54,7 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/bird_image"
         app:layout_constraintBottom_toTopOf="@+id/edit_recensements"
         tools:layout_editor_absoluteY="144dp">
 

@@ -2,15 +2,12 @@ package com.example.pioupioy;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.google.android.material.button.MaterialButtonToggleGroup;
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,8 +67,11 @@ public class LateralMenu extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_lateral_menu, container, false);
 
-        Button button = view.findViewById(R.id.button_add);
-        button.setOnClickListener(this);
+        Button add_button = view.findViewById(R.id.button_add);
+        add_button.setOnClickListener(this);
+
+        Button draft_button = view.findViewById(R.id.button_draft);
+        draft_button.setOnClickListener(this);
         return view;
     }
 
@@ -80,6 +80,10 @@ public class LateralMenu extends Fragment implements View.OnClickListener {
 
         if (view.getId() == R.id.button_add) {
             Intent intent = new Intent(getActivity(), Ajouter.class);
+            startActivity(intent);
+        }
+        if (view.getId() == R.id.button_draft) {
+            Intent intent = new Intent(getActivity(), DraftActivity.class);
             startActivity(intent);
         }
     }

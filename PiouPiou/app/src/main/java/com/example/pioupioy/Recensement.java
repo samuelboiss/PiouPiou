@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -18,10 +19,13 @@ import androidx.core.app.NotificationCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.osmdroid.util.GeoPoint;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -31,6 +35,10 @@ public class Recensement extends AppCompatActivity {
     public static final String CHANNEL_2_ID = "channel DEFAULT";
     public static final String CHANNEL_3_ID = "channel HIGH";
 
+    private static final int REQUEST_CODE_MAP = 1;
+
+    private GeoPoint address;
+
     // Déclaration de la base de données Firestore
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     public void onCreate(Bundle savedInstanceState) {
@@ -38,13 +46,28 @@ public class Recensement extends AppCompatActivity {
         createNotificationChannels();
         setContentView(R.layout.recensement);
 
+        // Récupération de l'adresse de l'utilisateur
+        ImageButton addressButton = findViewById(R.id.location_button);
+        addressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchMapActivity();
+            }
+        });
+
         Button enregistrer = findViewById(R.id.enregistrer);
         enregistrer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Récupération des données du formulaire
-                EditText dateEditText = findViewById(R.id.date);
-                String date = dateEditText.getText().toString();
+                Spinner typeSpinner = findViewById(R.id.spinner_type);
+                String type = typeSpinner.getSelectedItem().toString();
+
+                SimpleDateFormat parse = new SimpleDateFormat("dd/MM/yyyy");
+                Date time = new Date();
+                String date = parse.format(time);
+
+
 
                 EditText especeEditText = findViewById(R.id.espece);
                 String espece = especeEditText.getText().toString();
@@ -61,13 +84,19 @@ public class Recensement extends AppCompatActivity {
                 Spinner huntableSpinner = findViewById(R.id.spinner_huntable);
                 String huntable = huntableSpinner.getSelectedItem().toString();
 
+                Intent geoPoint = getIntent();
+                address = new GeoPoint(geoPoint.getDoubleExtra("latitude", 0), geoPoint.getDoubleExtra("longitude", 0));
+
+
                 Map<String, Object> census = new HashMap<>();
                 census.put("date", date);
+                census.put("type", type);
                 census.put("espece", espece);
                 census.put("nombre", nombre);
                 census.put("direction", direction);
                 census.put("meteo", meteo);
                 census.put("chassable", huntable);
+                census.put("address", address);
 
 
                 // Ajout des données dans la base de données Firestore census
@@ -153,5 +182,12 @@ public class Recensement extends AppCompatActivity {
             notificationManager.createNotificationChannel(channel);
         }
         notificationManager.notify(0, notification.build());
+    }
+
+
+    private void launchMapActivity() {
+        Intent intent = new Intent(this, MapActivity.class);
+        intent.putExtra("selectLocalisation", true);
+        startActivity(intent);
     }
 }
