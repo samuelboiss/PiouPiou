@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".connection.ConnectionActivity">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/bird_image"
         android:layout_width="280dp"
         android:layout_height="280dp"
         android:layout_marginTop="30dp"
@@ -17,7 +17,7 @@
         app:layout_constraintLeft_toLeftOf="parent"/>
 
     <TextView
-        android:id="@+id/label"
+        android:id="@+id/createAccountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Créer un compte"
@@ -26,10 +26,10 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        app:layout_constraintTop_toBottomOf="@id/bird_image" />
 
     <TextView
-        android:id="@+id/label1"
+        android:id="@+id/insertEmailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Entrez une adresse mail:"
@@ -38,10 +38,10 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label" />
+        app:layout_constraintTop_toBottomOf="@id/createAccountText" />
 
     <EditText
-        android:id="@+id/textbox"
+        android:id="@+id/insertEmailEdit"
         android:hint="Entrez un mail"
         android:layout_height="120px"
         android:layout_width="550dp"
@@ -50,10 +50,10 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/label1"/>
+        app:layout_constraintTop_toTopOf="@id/insertEmailText"/>
 
     <TextView
-        android:id="@+id/label3"
+        android:id="@+id/insertPseudoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Entrez une pseudonyme:"
@@ -62,10 +62,10 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textbox" />
+        app:layout_constraintTop_toTopOf="@id/insertEmailEdit" />
 
     <EditText
-        android:id="@+id/textbox4"
+        android:id="@+id/insertPseudoEdit"
         android:hint="Entrez un pseudo"
         android:layout_height="120px"
         android:layout_width="550dp"
@@ -74,10 +74,10 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/label3"/>
+        app:layout_constraintTop_toTopOf="@id/insertPseudoText"/>
 
     <TextView
-        android:id="@+id/label2"
+        android:id="@+id/insertPasswordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Entrez un mot de passe:"
@@ -86,10 +86,10 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textbox4" />
+        app:layout_constraintTop_toTopOf="@id/insertPseudoEdit" />
 
     <EditText
-        android:id="@+id/textbox2"
+        android:id="@+id/insertPasswordEdit"
         android:layout_width="550dp"
         android:layout_height="120px"
         android:layout_marginTop="100px"
@@ -98,11 +98,11 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/label2" />
+        app:layout_constraintTop_toTopOf="@id/insertPasswordText" />
 
 
     <EditText
-        android:id="@+id/textbox3"
+        android:id="@+id/confirmPasswordEdit"
         android:layout_width="550dp"
         android:layout_height="120px"
         android:layout_marginTop="150px"
@@ -111,10 +111,10 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textbox2" />
+        app:layout_constraintTop_toTopOf="@id/insertPasswordEdit" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/createAccountButton"
         android:layout_width="650dp"
         android:layout_height="200dp"
         android:backgroundTint="@color/green"
@@ -123,6 +123,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textbox3" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordEdit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
