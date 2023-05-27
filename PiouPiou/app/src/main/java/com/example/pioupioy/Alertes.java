@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pioupioy.connection.ConnectionActivity;
+
 public class Alertes extends AppCompatActivity {
 
     @Override
@@ -13,7 +15,7 @@ public class Alertes extends AppCompatActivity {
         setContentView(R.layout.alertes);
         findViewById(R.id.retour2).setOnClickListener( clic -> {
             System.out.println("1");
-            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent=new Intent(getApplicationContext(), ConnectionActivity.class);
             System.out.println(intent);
             startActivity(intent);
         });

@@ -43,7 +43,7 @@
 
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/bird_image"
         android:layout_width="64dp"
         android:layout_height="57dp"
         android:background="@color/white"
