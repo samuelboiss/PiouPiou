@@ -14,7 +14,6 @@ public class BirdCensus {
     private final Date date;
     private final ItemType type;
     private final byte[] image;
-
     private String meteo;
     private String direction;
 
@@ -53,16 +52,6 @@ public class BirdCensus {
 
     public ItemType getType() {
         return type;
-    }
-
-    public Bitmap getBitmapImage() {
-        // Convert byte array to Bitmap
-        return BitmapFactory.decodeByteArray(image, 0, image.length);
-    }
-
-    public String getFormattedTime() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        return dateFormat.format(date);
     }
 
     public String getMeteo() {
