@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background_green"
-    android:alpha="0.7">
-
-    <Button
-        android:id="@+id/retour2"
-        android:layout_width="129dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="664dp"
-        android:layout_marginEnd="140dp"
-        android:backgroundTint="@color/button_gray"
-        android:drawablePadding="10dp"
-        android:gravity="center"
-        android:text="Retour"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:alpha="0.7"
+    android:background="@color/background_green">
 
     <LinearLayout
         android:layout_width="214dp"
@@ -40,15 +26,14 @@
             android:id="@+id/titre_ajouter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="@string/Mes_Brouillons"
             android:textColor="@color/black"
-            android:textSize="20dp"
-            android:gravity="center"
-            />
+            android:textSize="20dp" />
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/bird_image"
         android:layout_width="64dp"
         android:layout_height="57dp"
         android:layout_marginTop="44dp"
@@ -60,20 +45,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/liste_brouillons"
-        android:layout_width="250dp"
-        android:layout_height="317dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/draft_list"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
         android:background="@color/white"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/back_pressed_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bird_image" />
+
+    <Button
+        android:id="@+id/back_pressed_button"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/button_gray"
+        android:gravity="center"
+        android:text="@string/return_button"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

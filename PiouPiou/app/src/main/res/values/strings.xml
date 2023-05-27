@@ -11,7 +11,45 @@
     <string name="date">Le 12/12/2019</string>
     <string name="Alertes">Alertes</string>
     <string name="direction">Veuillez choisir une direction</string>
+    <string name="type">Veuillez choisir un type</string>
     <string name="meteo">Veuillez choisir une météo</string>
     <string name="huntable_spinner">La zone est chassable</string>
     <string name="zone_chassable_oui">Zone chassable : Oui</string>
+
+    <!-- Draft string staff -->
+    <string name="species_string">Espèce :</string>
+    <string name="number_bird_string">Nombre :</string>
+    <string name="direction_string">Direction :</string>
+    <string name="weather_string">Météo :</string>
+    <string name="huntable_string">Chassable :</string>
+    <string name="type_string">Type :</string>
+
+    <!-- Register string staff -->
+    <string name="create_account">Créer un compte</string>
+    <string name="insert_email">Entrez une adresse mail :</string>
+    <string name="insert_email_placeholder">Entrez un mail</string>
+    <string name="insert_pseudo">Entrez une pseudonyme :</string>
+    <string name="insert_pseudo_placeholder">Entrez un pseudo</string>
+    <string name="insert_password">Entrez un mot de passe :</string>
+    <string name="insert_password_placeholder">Entrez un mot de passe</string>
+    <string name="confirm_password_placeholder">Confirmez le mot de passe</string>
+    <string name="create_account_button">Création du compte</string>
+
+    <!-- Connection string staff -->
+    <string name="insert_identifiant_connection">Entrez votre identifiant :</string>
+    <string name="insert_identifiant_placeholder">Entrez votre mail ou pseudo</string>
+    <string name="insert_password_connection">Entrez votre mot de passe :</string>
+    <string name="insert_password__connection_placeholder">Entrez votre mot de passe</string>
+    <string name="forgot_password">Mot de passe oublié ?</string>
+    <string name="connection_string">Se connecter</string>
+    <string name="register_string">S\'inscrire</string>
+
+    <!-- Forget Password string staff -->
+    <string name="insert_email_forget_password">Entrez votre adresse mail :</string>
+    <string name="reinitialisation_string">Réinitialiser</string>
+    <string name="change_password_string">Vous allez recevoir un email pour changer votre mot de passe.</string>
+    <string name="insert_email_forger_placeholder">Entrez votre adresse mail</string>
+    <string name="return_button">Retour</string>
+
+
 </resources>

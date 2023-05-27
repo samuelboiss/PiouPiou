@@ -30,7 +30,7 @@ public class BirdCensusInfo extends Fragment {
 
             String numberOfBirdStr = "Nombre : " + birdCensus.getNumberOfBird();
             String isHuntableStr;
-            ((ImageView) view.findViewById(R.id.image)).setImageBitmap(birdCensus.getBitmapImage());
+            ((ImageView) view.findViewById(R.id.bird_image)).setImageBitmap(birdCensus.getBitmapImage());
             ((TextView) view.findViewById(R.id.birdName)).setText(birdCensus.getName());
             ((TextView) view.findViewById(R.id.numberOfBird)).setText(numberOfBirdStr);
             if (birdCensus.isHuntable()) {
@@ -39,7 +39,7 @@ public class BirdCensusInfo extends Fragment {
             } else {
                 isHuntableStr = "Chassable : non";
                 ((TextView) view.findViewById(R.id.huntable_area)).setText(isHuntableStr);
-                ((TextView) view.findViewById(R.id.date)).setText(birdCensus.getFormattedTime());
+                ((TextView) view.findViewById(R.id.date)).setText(birdCensus.getDate());
             }
         }
         Button closeButton = view.findViewById(R.id.close);
