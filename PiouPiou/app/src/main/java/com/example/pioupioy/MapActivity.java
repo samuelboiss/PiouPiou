@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.pioupioy.controller.map.MainMapController;
 
@@ -48,6 +49,11 @@ public class MapActivity extends AppCompatActivity {
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LateralMenu fragment = new LateralMenu();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.navBar, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
                 findViewById(R.id.navBar).setVisibility(View.VISIBLE);
             }
         });
@@ -93,6 +99,7 @@ public class MapActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         findViewById(R.id.birdCensus_info).setVisibility(View.INVISIBLE);
+        findViewById(R.id.navBar).setVisibility(View.INVISIBLE);
         super.onBackPressed();
     }
 

@@ -1,28 +1,31 @@
 <resources>
     <string name="app_name">PiouPiou</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Map string staff -->
     <string name="search_label">Search...</string>
     <string name="search_hint">Recherche</string>
-    <string name="birdNumber">Nombre :</string>
-    <string name="huntable">Chassable :</string>
-    <string name="ajouter">Ajouter</string>
-    <string name="Mes_Brouillons">Mes Brouillons</string>
-    <string name="date">Le 12/12/2019</string>
-    <string name="Alertes">Alertes</string>
+    <string name="place_marker_text">Placer le marker</string>
+
+
+    <!-- Menu string staff -->
+    <string name="add_thing">Ajouter</string>
+    <string name="my_drafts">Mes Brouillons</string>
+    <string name="warning">Alertes</string>
+    <string name="history">Historique</string>
+
+    <!-- Add spinner string staff -->
     <string name="direction">Veuillez choisir une direction</string>
     <string name="type">Veuillez choisir un type</string>
     <string name="meteo">Veuillez choisir une météo</string>
     <string name="huntable_spinner">La zone est chassable</string>
-    <string name="zone_chassable_oui">Zone chassable : Oui</string>
 
     <!-- Draft string staff -->
-    <string name="species_string">Espèce :</string>
-    <string name="number_bird_string">Nombre :</string>
-    <string name="direction_string">Direction :</string>
-    <string name="weather_string">Météo :</string>
-    <string name="huntable_string">Chassable :</string>
-    <string name="type_string">Type :</string>
+    <string name="species_string">Espèce : </string>
+    <string name="number_bird_string">Nombre : </string>
+    <string name="direction_string">Direction : </string>
+    <string name="weather_string">Météo : </string>
+    <string name="huntable_string">Chassable : </string>
+    <string name="type_string">Type : </string>
 
     <!-- Register string staff -->
     <string name="create_account">Créer un compte</string>
@@ -49,7 +52,22 @@
     <string name="reinitialisation_string">Réinitialiser</string>
     <string name="change_password_string">Vous allez recevoir un email pour changer votre mot de passe.</string>
     <string name="insert_email_forger_placeholder">Entrez votre adresse mail</string>
-    <string name="return_button">Retour</string>
+
+    <!-- Add things string staff -->
+    <string name="add_recensement_string">RECENSEMENT</string>
+    <string name="add_repere_string">REPÈRE</string>
+    <string name="add_observation_string">SITE D\'OBSERVATION</string>
+    <string name="add_contact_string">CONTACT</string>
+    <string name="add_contact">Ajouter un Contact</string>
+    <string name="validate_button">Valider</string>
+    <string name="phone_number_string">Numéro de télephone</string>
+    <string name="name_string">Nom</string>
+    <string name="calendar">Calendrier</string>
+    <string name="statistics">Statistiques</string>
+    <string name="new_census_string">Recensement</string>
+    <string name="species_edit_text">Espèce</string>
+    <string name="nombre">Nombre</string>
+    <string name="register_census">Enregistrer</string>
 
 
 </resources>

@@ -14,7 +14,7 @@
         android:layout_height="50dp"
         android:background="@android:color/transparent"
         android:clickable="true"
-        android:drawableTop="@drawable/close_popup"
+        android:drawableTop="@drawable/ic_close"
         android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

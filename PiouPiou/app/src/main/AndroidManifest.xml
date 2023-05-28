@@ -54,7 +54,7 @@
             android:name=".MapActivity"
             android:exported="true"/>
         <activity
-            android:name=".Ajouter"
+            android:name=".AddActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.ajouter" />
@@ -63,7 +63,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Recensement"
+            android:name=".RecensementActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.recensement" />
@@ -72,7 +72,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AjouterContact"
+            android:name=".AddContactActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.ajoutercontact" />

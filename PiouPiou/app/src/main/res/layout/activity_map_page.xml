@@ -24,23 +24,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar_draft"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/green_200"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <ImageView
                 android:id="@+id/menu_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:src="@mipmap/menu_icon"
-                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_nav"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/search_bar"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <SearchView
                 android:id="@+id/search_bar"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="32dp"
                 android:iconifiedByDefault="false"
                 android:queryHint="@string/search_label"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/menu_button"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -61,9 +73,10 @@
             android:name="com.example.pioupioy.LateralMenu"
             android:layout_width="320dp"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout="@layout/fragment_lateral_menu"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_lateral_menu" />
 
 
     </RelativeLayout>
