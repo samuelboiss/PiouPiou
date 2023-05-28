@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="green_200">#82E779</color>
+    <color name="green_200">#B8F1B3</color>
     <color name="green_500">#228C19</color>
     <color name="green_700">#14520F</color>
     <color name="teal_200">#5ADF4E</color>
@@ -11,4 +11,6 @@
     <color name="green">#2DB721</color>
     <color name="background_green">#72CF4D</color>
     <color name="button_gray">#D9D9D9</color>
+    <color name="ligth_gray">#F2F2F2</color>
+
 </resources>

@@ -42,7 +42,7 @@ public class DraftActivity extends AppCompatActivity {
         fillDraftList();
 
         findViewById(R.id.back_pressed_button).setOnClickListener(clic -> {
-            Intent intent = new Intent(getApplicationContext(), ConnectionActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MapActivity.class);
             startActivity(intent);
         });
     }
