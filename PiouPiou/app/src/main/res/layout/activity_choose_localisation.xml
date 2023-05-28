@@ -21,30 +21,28 @@
             android:layout_height="match_parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar_draft"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="100dp"
+            android:background="@color/green_200"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/place_point"
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Placer le marker"
                 android:gravity="center"
-                android:textSize="30sp"
-                android:background="@color/grey"
-                android:iconifiedByDefault="false"
+                android:padding="10dp"
+                android:text="@string/place_marker_text"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
 
 
     </RelativeLayout>
