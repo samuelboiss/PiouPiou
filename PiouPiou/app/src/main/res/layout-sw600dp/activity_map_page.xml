@@ -49,7 +49,7 @@
 
         <fragment
             android:id="@+id/birdCensus_info"
-            android:name="com.example.pioupioy.BirdCensusInfo"
+            android:name="com.example.pioupioy.BirdEventInfo"
             android:layout_width="300dp"
             android:layout_height="400dp"
             android:layout_centerInParent="true"

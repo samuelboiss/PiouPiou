@@ -186,8 +186,7 @@ public class Recensement extends AppCompatActivity {
 
 
     private void launchMapActivity() {
-        Intent intent = new Intent(this, MapActivity.class);
-        intent.putExtra("selectLocalisation", true);
+        Intent intent = new Intent(this, PlaceMarkerActivity.class);
         startActivity(intent);
     }
 }

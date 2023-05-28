@@ -10,15 +10,15 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class BirdCensusInfo extends Fragment {
-    private BirdCensus birdCensus;
+public class BirdEventInfo extends Fragment {
+    private BirdEvent birdEvent;
 
-    public BirdCensusInfo() {
-        this.birdCensus = null;
+    public BirdEventInfo() {
+        this.birdEvent = null;
     }
 
-    public BirdCensusInfo(BirdCensus birdCensus) {
-        this.birdCensus = birdCensus;
+    public BirdEventInfo(BirdEvent birdEvent) {
+        this.birdEvent = birdEvent;
     }
 
     @Override
@@ -26,20 +26,20 @@ public class BirdCensusInfo extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bird_census_info, container, false);
 
-        if (birdCensus != null) {
+        if (birdEvent != null) {
 
-            String numberOfBirdStr = "Nombre : " + birdCensus.getNumberOfBird();
+            String numberOfBirdStr = "Nombre : " + birdEvent.getNumberOfBird();
             String isHuntableStr;
-            ((ImageView) view.findViewById(R.id.bird_image)).setImageBitmap(birdCensus.getBitmapImage());
-            ((TextView) view.findViewById(R.id.birdName)).setText(birdCensus.getName());
+            ((ImageView) view.findViewById(R.id.bird_image)).setImageBitmap(birdEvent.getBitmapImage());
+            ((TextView) view.findViewById(R.id.birdName)).setText(birdEvent.getName());
             ((TextView) view.findViewById(R.id.numberOfBird)).setText(numberOfBirdStr);
-            if (birdCensus.isHuntable()) {
+            if (birdEvent.isHuntable()) {
                 isHuntableStr = "Chassable : oui";
                 ((TextView) view.findViewById(R.id.huntable_area)).setText(isHuntableStr);
             } else {
                 isHuntableStr = "Chassable : non";
                 ((TextView) view.findViewById(R.id.huntable_area)).setText(isHuntableStr);
-                ((TextView) view.findViewById(R.id.date)).setText(birdCensus.getDate());
+                ((TextView) view.findViewById(R.id.date)).setText(birdEvent.getDate());
             }
         }
         Button closeButton = view.findViewById(R.id.close);

@@ -1,6 +1,9 @@
 package com.example.pioupioy;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -9,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pioupioy.connection.ConnectionActivity;
+import com.example.pioupioy.utils.ImageUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -18,13 +22,14 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import org.osmdroid.util.GeoPoint;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class DraftActivity extends AppCompatActivity {
-    private List<BirdEvent> eventList = new ArrayList<>();
+    private final List<BirdEvent> eventList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,12 @@ public class DraftActivity extends AppCompatActivity {
     }
 
     private void fillDraftList() {
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bird_default_icon);
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference collectionBirdEvent = db.collection("census");
@@ -56,10 +67,8 @@ public class DraftActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     List<BirdEvent> birdEventList = new ArrayList<>();
-                    Toast.makeText(DraftActivity.this, "Bebou", Toast.LENGTH_SHORT).show();
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         if (document.exists()) {
-                            Toast.makeText(DraftActivity.this, "Exist", Toast.LENGTH_SHORT).show();
                             Map<String, Object> data = document.getData();
 
                             String name = (String) data.get("espece");
@@ -80,17 +89,19 @@ public class DraftActivity extends AppCompatActivity {
 
                             boolean isHuntable;
 
+                            assert huntable != null;
                             if (huntable.equals("oui")) {
                                 isHuntable = true;
                             } else {
                                 isHuntable = false;
                             }
 
+                            assert type != null;
                             if (type.equals("census")) {
-                                BirdCensus birdCensus = new BirdCensus(name,(int) number, date, null, isHuntable, location, direction, weather);
+                                BirdCensus birdCensus = new BirdCensus(name,(int) number, date, byteArray, isHuntable, location, direction, weather);
                                 birdEventList.add(birdCensus);
                             } else if (type.equals("observation")) {
-                                BirdObservation birdObservation = new BirdObservation(name, (int) number, date, null, isHuntable, location, direction, weather);
+                                BirdObservation birdObservation = new BirdObservation(name, (int) number, date, byteArray, isHuntable, location, direction, weather);
                                     birdEventList.add(birdObservation);
 
                             } else {
