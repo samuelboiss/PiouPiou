@@ -9,12 +9,12 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AjouterContact extends AppCompatActivity {
+public class AddContactActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ajouter_un_contact);
+        setContentView(R.layout.activity_add_contact);
 
         EditText nomEditText = findViewById(R.id.nom);
         EditText numeroEditText = findViewById(R.id.numero);
@@ -39,6 +39,11 @@ public class AjouterContact extends AppCompatActivity {
 
                 startActivity(intent);
             }
+        });
+
+        findViewById(R.id.back_pressed_button).setOnClickListener(clic -> {
+            Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+            startActivity(intent);
         });
     }
 }

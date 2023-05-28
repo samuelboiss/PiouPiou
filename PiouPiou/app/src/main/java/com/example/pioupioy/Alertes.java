@@ -13,10 +13,8 @@ public class Alertes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alertes);
-        findViewById(R.id.retour2).setOnClickListener( clic -> {
-            System.out.println("1");
-            Intent intent=new Intent(getApplicationContext(), ConnectionActivity.class);
-            System.out.println(intent);
+        findViewById(R.id.back_pressed_button).setOnClickListener( clic -> {
+            Intent intent=new Intent(getApplicationContext(), MapActivity.class);
             startActivity(intent);
         });
     }

@@ -83,7 +83,7 @@ public class PlaceMarkerActivity extends AppCompatActivity {
             @Override
             public boolean singleTapConfirmedHelper(GeoPoint p) {
                 Toast.makeText(PlaceMarkerActivity.this, "SINGLE", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(PlaceMarkerActivity.this, Recensement.class);
+                Intent intent = new Intent(PlaceMarkerActivity.this, RecensementActivity.class);
                 intent.putExtra("latitude", p.getLatitude());
                 intent.putExtra("longitude", p.getLongitude());
                 startActivity(intent);
