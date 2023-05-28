@@ -111,7 +111,7 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/green_500"
         android:padding="30dp"
         android:text="@string/create_account_button"
         app:layout_constraintEnd_toEndOf="parent"
