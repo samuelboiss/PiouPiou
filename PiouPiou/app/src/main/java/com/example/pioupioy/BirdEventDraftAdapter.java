@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -66,7 +67,7 @@ public class BirdEventDraftAdapter extends BaseAdapter {
         huntable.setText(eventList.get(i).isHuntable() ? "Oui" : "Non");
 
 
-        ConstraintLayout layout = view.findViewById(R.id.bird_draft);
+        GridLayout layout = view.findViewById(R.id.bird_draft);
         layout.setOnClickListener(view1 -> {
             Factory factory = new Factory();
             BirdEvent event;

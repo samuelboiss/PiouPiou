@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -30,8 +31,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Recensement extends AppCompatActivity {
-    private static final String CHANNEL_1_ID = "channel LOW" ;
+public class RecensementActivity extends AppCompatActivity {
+    private static final String CHANNEL_1_ID = "channel LOW";
     public static final String CHANNEL_2_ID = "channel DEFAULT";
     public static final String CHANNEL_3_ID = "channel HIGH";
 
@@ -41,10 +42,11 @@ public class Recensement extends AppCompatActivity {
 
     // Déclaration de la base de données Firestore
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         createNotificationChannels();
-        setContentView(R.layout.recensement);
+        setContentView(R.layout.activity_recensement);
 
         // Récupération de l'adresse de l'utilisateur
         ImageButton addressButton = findViewById(R.id.location_button);
@@ -66,7 +68,6 @@ public class Recensement extends AppCompatActivity {
                 SimpleDateFormat parse = new SimpleDateFormat("dd/MM/yyyy");
                 Date time = new Date();
                 String date = parse.format(time);
-
 
 
                 EditText especeEditText = findViewById(R.id.espece);
@@ -107,7 +108,7 @@ public class Recensement extends AppCompatActivity {
                             public void onSuccess(DocumentReference documentReference) {
                                 // Affichage d'un message de succès
                                 System.out.println("Census ajouté avec ID: " + documentReference.getId());
-                                sendNotificationOnChannel("Recensement","Vous avez bien ajouter un recensement", "LOW");
+                                sendNotificationOnChannel("Recensement", "Vous avez bien ajouter un recensement", "LOW");
 
                             }
                         })
@@ -116,20 +117,20 @@ public class Recensement extends AppCompatActivity {
                             public void onFailure(@NonNull Exception e) {
                                 // Affichage d'un message d'erreur
                                 System.out.println("Erreur lors de l'ajout du census" + e.getMessage());
-                                sendNotificationOnChannel("Recensement","Votre recensement n'a pas été ajouté", "LOW");
+                                sendNotificationOnChannel("Recensement", "Votre recensement n'a pas été ajouté", "LOW");
 
                             }
                         });
                 // Redirection vers la page de la carte
-                Intent intent = new Intent(Recensement.this, MapActivity.class);
+                Intent intent = new Intent(RecensementActivity.this, MapActivity.class);
                 startActivity(intent);
             }
         });
-        Button retour=findViewById(R.id.retour);
+        ImageView retour = findViewById(R.id.back_pressed_button);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),MapActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
                 startActivity(intent);
             }
         });
@@ -138,13 +139,13 @@ public class Recensement extends AppCompatActivity {
 
     private void createNotificationChannels() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // Créer le NotificationChannel, seulement pour API 26+
-            NotificationChannel channel1 = createNotificationChannel( CHANNEL_1_ID,"Channel 1",
+            NotificationChannel channel1 = createNotificationChannel(CHANNEL_1_ID, "Channel 1",
                     NotificationManager.IMPORTANCE_LOW,
                     "This Channel has low priority");
-            NotificationChannel channel2 = createNotificationChannel( CHANNEL_2_ID,"Channel 2",
+            NotificationChannel channel2 = createNotificationChannel(CHANNEL_2_ID, "Channel 2",
                     NotificationManager.IMPORTANCE_DEFAULT,
                     "This Channel has default priority");
-            NotificationChannel channel3 = createNotificationChannel( CHANNEL_3_ID,"Channel 2",
+            NotificationChannel channel3 = createNotificationChannel(CHANNEL_3_ID, "Channel 2",
                     NotificationManager.IMPORTANCE_HIGH,
                     "This Channel has high priority");
             // Enregister le canal sur le système : attention de ne plus rien modifier après
