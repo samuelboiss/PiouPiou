@@ -59,7 +59,7 @@
         <fragment
             android:id="@+id/navBar"
             android:name="com.example.pioupioy.LateralMenu"
-            android:layout_width="320dp"
+            android:layout_width="550dp"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
