@@ -81,10 +81,20 @@
             </intent-filter>
         </activity>
 
+
+
         <activity android:name=".DraftActivity"/>
 
         <activity android:name=".PlaceMarkerActivity"/>
 
+        <activity android:name=".TwitterActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.twitter" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
 
     </application>

@@ -41,6 +41,19 @@ public class LateralMenu extends Fragment {
             }
         });
 
+
+        ConstraintLayout twitter_button = view.findViewById(R.id.button_twitter);
+        twitter_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), TwitterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
         ImageView close_button = view.findViewById(R.id.close_menu);
         close_button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -70,6 +70,8 @@
     <string name="register_census">Enregistrer</string>
     <string name="warning1">Attention ! Fortes pluies dans le 06 le 08/03/22</string>
     <string name="warning2">Attention ! Fortes pluies dans le 83 le 06/03/22</string>
+    <string name="actualit_sur_les_oiseaux">Quoi de neuf sur Twitter ?</string>
+    <string name="twitter">Twitter\n</string>
 
 
 </resources>
