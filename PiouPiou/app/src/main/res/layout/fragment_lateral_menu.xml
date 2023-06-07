@@ -200,7 +200,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/button_calendar"
+        android:id="@+id/button_twitter"
+        android:layout_marginTop="20dp"
+
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
@@ -216,7 +218,8 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/calendar"
+            android:textSize="25sp"
+            android:text="@string/twitter"
             android:textColor="@color/black"
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/calendar_icon"
@@ -242,9 +245,9 @@
         android:background="@color/grey"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_calendar">
+        app:layout_constraintTop_toBottomOf="@id/button_twitter">
+
 
         <TextView
             android:layout_width="wrap_content"
