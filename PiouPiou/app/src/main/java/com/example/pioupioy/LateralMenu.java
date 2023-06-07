@@ -51,6 +51,15 @@ public class LateralMenu extends Fragment {
             }
         });
 
+        ConstraintLayout gps_button = view.findViewById(R.id.button_gps);
+        gps_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), GPSActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
