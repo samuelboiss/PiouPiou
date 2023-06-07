@@ -37,7 +37,7 @@
             <SearchView
                 android:id="@+id/search_bar"
                 android:layout_width="500dp"
-                android:layout_height="40dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="32dp"
                 android:iconifiedByDefault="false"
                 android:queryHint="@string/search_label"
@@ -50,8 +50,8 @@
         <fragment
             android:id="@+id/birdCensus_info"
             android:name="com.example.pioupioy.BirdEventInfo"
-            android:layout_width="300dp"
-            android:layout_height="400dp"
+            android:layout_width="500dp"
+            android:layout_height="600dp"
             android:layout_centerInParent="true"
             android:visibility="invisible"
             tools:layout="@layout/fragment_bird_census_info" />
@@ -59,7 +59,7 @@
         <fragment
             android:id="@+id/navBar"
             android:name="com.example.pioupioy.LateralMenu"
-            android:layout_width="320dp"
+            android:layout_width="550dp"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
