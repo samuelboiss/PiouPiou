@@ -23,7 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/toolbar_draft"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:background="@color/green_200"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
