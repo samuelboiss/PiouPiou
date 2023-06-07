@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".connection.ConnectionActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green">
+
+
+    <LinearLayout
+        android:id="@+id/grayBox"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:background="@drawable/shape"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="65dp"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/profil"
+            android:layout_marginLeft="25dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Profil"
+            android:textColor="@color/black"
+            android:textSize="50sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pioupiou"
+        android:background="@color/white"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toRightOf="@id/grayBox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/grayBox2"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:text="pseudo:"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:background="@color/button_gray"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/grayBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+
+
+
+
+
+
+
+
+    </TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/grey"
+        android:shape="@drawable/shape"
+        android:layout_marginBottom="50dp"
+        android:text="Retour"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        ></Button>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
