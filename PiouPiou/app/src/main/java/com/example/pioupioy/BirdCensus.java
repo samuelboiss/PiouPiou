@@ -1,69 +1,64 @@
 package com.example.pioupioy;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import androidx.annotation.NonNull;
 
-public class BirdCensus {
-    private String name;
-    private int numberOfBird;
-    private boolean huntable;
-    private Date date;
-    private ItemType type;
-    private byte[] image;
+import org.osmdroid.util.GeoPoint;
 
+public class BirdCensus extends BirdEvent implements Parcelable {
+    private BirdEventType type;
 
-    public BirdCensus(String name, int numberOfBird, Date date, ItemType type, byte[] image, boolean huntable) {
-        this.name = name;
-        this.numberOfBird = numberOfBird;
-        this.date = date;
-        this.type = type;
-        this.image = image;
-        this.huntable = huntable;
+    public BirdCensus(String name, int numberOfBird, String  date, byte[] image, boolean huntable, GeoPoint address, String direction, String meteo) {
+        super(name, numberOfBird, date, image, huntable, address, direction, meteo);
+        this.type = BirdEventType.CENSUS;
     }
 
-    public BirdCensus(String name, int numberOfBird, Date date, ItemType type, byte[] image) {
-        this.name = name;
-        this.numberOfBird = numberOfBird;
-        this.date = date;
-        this.type = type;
-        this.image = image;
+    protected BirdCensus(Parcel in) throws IllegalAccessException {
+        super(in.readString(), in.readInt(), in.readString(), in.createByteArray(), in.readByte() != 0, new GeoPoint(in.readDouble(), in.readDouble()), in.readString(), in.readString());
+        this.type = BirdEventType.CENSUS;
     }
 
-    public String getName(){
-        return name;
+    public static final Creator<BirdCensus> CREATOR = new Creator<BirdCensus>() {
+        @Override
+        public BirdCensus createFromParcel(Parcel in) {
+            try {
+                return new BirdCensus(in);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        @Override
+        public BirdCensus[] newArray(int size) {
+            return new BirdCensus[size];
+        }
+    };
+
+    @Override
+    public String getLabel() {
+        return this.type.getLabel();
     }
 
-    public boolean isHuntable() {
-        return huntable;
+    public BirdEventType getType() {
+        return this.type;
     }
 
-    public byte[] getImage() {
-        return image;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public int getNumberOfBird() {
-        return numberOfBird;
-    }
-
-    public ItemType getType() {
-        return type;
-    }
-
-    public Bitmap getBitmapImage() {
-        // Convert byte array to Bitmap
-        return BitmapFactory.decodeByteArray(image, 0, image.length);
-    }
-
-    public String getFormattedTime() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        return dateFormat.format(date);
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeInt(numberOfBird);
+        parcel.writeSerializable(date);
+        parcel.writeByteArray(image);
+        parcel.writeByte((byte) (huntable ? 1 : 0));
+        parcel.writeParcelable(address, i);
+        parcel.writeString(direction);
+        parcel.writeString(weather);
     }
 }

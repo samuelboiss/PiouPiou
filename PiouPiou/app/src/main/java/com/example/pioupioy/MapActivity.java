@@ -1,163 +1,105 @@
 package com.example.pioupioy;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentTransaction;
 
-import org.osmdroid.api.IMapController;
+import com.example.pioupioy.controller.map.MainMapController;
+
 import org.osmdroid.config.Configuration;
-import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
-import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapController;
-import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.ItemizedIconOverlay;
-import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
-import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.OverlayItem;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Date;
 
 
-// add implementation 'org.osmdroid:osmdroid-android:6.0.2' in gradle dependencies
 public class MapActivity extends AppCompatActivity {
-
-    private MapView map;
-
-    // TODO : change for geolocation
     private static final double DEFAULT_LATITUDE = 43.6152209;
     private static final double DEFAULT_LONGITUDE = 7.0727436;
+    private boolean isSelectedBirdEvent = false;
 
-    private Marker addMarker(BirdCensus birdCensus, GeoPoint geoPoint) {
-        Marker customMarker = new Marker(map);
-        if (birdCensus.getType().equals(ItemType.CENSUS)) {
-            customMarker.setIcon(getDrawable(R.drawable.bird_identification_icon));
-        } else if (birdCensus.getType().equals(ItemType.OBSERVATION)) {
-            customMarker.setIcon(getDrawable(R.drawable.observation_site_icon));
-        }
-        customMarker.setPosition(geoPoint);
-        customMarker.setPanToView(true);
-
-        customMarker.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker, MapView mapView) {
-                BirdCensusInfo fragment = new BirdCensusInfo(birdCensus);
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.birdCensus_info, fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-                findViewById(R.id.birdCensus_info).setVisibility(View.VISIBLE);
-                return false;
-            }
-        });
-        return customMarker;
-    }
-
-    private void setMarker() {
-        // TODO : change the real data
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pioupiou);
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
-
-        map.getOverlays().add(addMarker(new BirdCensus("Pigeon de test",
-                                3,
-                                new Date(),
-                                ItemType.CENSUS,
-                                byteArray,
-                                true
-                        ), new GeoPoint(43.6185609290512, 7.073302138130848)
-                )
-        );
-
-        map.getOverlays().add(addMarker(new BirdCensus("Observatoire à Pigeon de tests",
-                                3,
-                                new Date(),
-                                ItemType.OBSERVATION,
-                                byteArray,
-                                true
-                        ), new GeoPoint(43.6185609290512, 7.063302138130848)
-                )
-        );
-    }
-
-    private void setupMap() {
-        map = findViewById(R.id.map);
-        map.setTileSource(TileSourceFactory.MAPNIK);
-        map.setBuiltInZoomControls(true);
-    }
-
-    private void setMapCenterPosition(double latitude, double longitude) {
-        GeoPoint startPoint = new GeoPoint(latitude, longitude);
-        IMapController mapController = (MapController) map.getController();
-        mapController.setZoom(18.0);
-        mapController.setCenter(startPoint);
-
-    }
+    private MainMapController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Configuration.getInstance().load(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
-        setContentView(R.layout.map_page);
+        setContentView(R.layout.activity_map_page);
 
         findViewById(R.id.birdCensus_info).setVisibility(View.INVISIBLE);
         findViewById(R.id.navBar).setVisibility(View.INVISIBLE);
 
-        setupMap();
+        this.controller = new MainMapController(this, findViewById(R.id.map), this);
+        controller.initMap(DEFAULT_LATITUDE, DEFAULT_LONGITUDE);
 
-        setMapCenterPosition(DEFAULT_LATITUDE, DEFAULT_LONGITUDE);
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        }
 
-        setMarker();
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+        }
 
         ImageView menuButton = findViewById(R.id.menu_button);
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LateralMenu fragment = new LateralMenu();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.navBar, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
                 findViewById(R.id.navBar).setVisibility(View.VISIBLE);
-                map.setClickable(false);
-                map.setEnabled(false);
             }
         });
 
+        Intent intent = getIntent();
+        if (intent != null) {
+            if (intent.hasExtra("selectBirdEvent")) {
+                isSelectedBirdEvent = intent.getBooleanExtra("selectBirdEvent", false);
+            }
+        }
+        if (isSelectedBirdEvent) {
+            Bundle bundle = getIntent().getExtras();
+            if (bundle != null) {
+                BirdEvent birdEvent = bundle.getParcelable("bird_event");
+                if (birdEvent != null) {
+                    double latitude = birdEvent.getLatitude();
+                    double longitude = birdEvent.getLongitude();
+                    controller.initMap(latitude, longitude);
+                }
+            }
+        }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        map.onPause();
+        controller.getMap().onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        map.onResume();
+        controller.getMap().onResume();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        ViewGroup parent = (ViewGroup) map.getParent();
-        parent.removeView(map);
+        ViewGroup parent = (ViewGroup) controller.getMap().getParent();
+        parent.removeView(controller.getMap());
     }
 
     @Override
     public void onBackPressed() {
         findViewById(R.id.birdCensus_info).setVisibility(View.INVISIBLE);
+        findViewById(R.id.navBar).setVisibility(View.INVISIBLE);
         super.onBackPressed();
     }
 
