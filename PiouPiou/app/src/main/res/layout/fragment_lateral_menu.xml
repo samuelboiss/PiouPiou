@@ -136,8 +136,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/grey"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/button_alerts"
-
+        app:layout_constraintBottom_toTopOf="@id/button_gps"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_draft">
 
