@@ -87,18 +87,17 @@ public class BirdEventDraftAdapter extends BaseAdapter {
                 );
 
             } catch (Throwable e) {
-                // TODO : change this exception to make it more appropriate
+                // TODO : change this exception
                 return;
             }
 
             // Create the Intent and add the String parameter
             Intent intent = new Intent(context, MapActivity.class);
-            intent.putExtra("selectedBirdEvent", true);
-
+          //  intent.putExtra("selectedBirdEvent", true);
             if (eventType.equals(BirdEventType.CENSUS)) {
-                intent.putExtra("bird_event", (BirdCensus) event);
+                intent.putExtra("bird_event", event);
             } else if (eventType.equals(BirdEventType.OBSERVATION)) {
-                intent.putExtra("bird_event", (BirdObservation) event);
+                intent.putExtra("bird_event", event);
             } else {
                 return;
             }

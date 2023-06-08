@@ -27,9 +27,9 @@ public class BirdObservation extends BirdEvent implements Parcelable {
     }
 
     protected BirdObservation(Parcel in) throws IllegalAccessException {
-        super(in.readString(), in.readInt(), in.readString(), in.createByteArray(), in.readByte() != 0, new GeoPoint(in.readDouble(), in.readDouble()), in.readString(), in.readString());
+        super(in.readString(), in.readInt(), in.readString(), in.createByteArray(), in.readByte() != 0, (GeoPoint) in.readParcelable(GeoPoint.class.getClassLoader()), in.readString(), in.readString());
         // decryt the type
-        this.type = BirdEventType.valueOf(in.readString());
+        this.type = (BirdEventType) in.readSerializable();
     }
 
     public static final Creator<BirdObservation> CREATOR = new Creator<BirdObservation>() {
@@ -57,13 +57,13 @@ public class BirdObservation extends BirdEvent implements Parcelable {
     public void writeToParcel(@NonNull Parcel parcel, int i) {
         parcel.writeString(name);
         parcel.writeInt(numberOfBird);
-        parcel.writeSerializable(date);
+        parcel.writeString(date);
         parcel.writeByteArray(image);
         parcel.writeByte((byte) (huntable ? 1 : 0));
         parcel.writeParcelable(address, i);
         parcel.writeString(direction);
         parcel.writeString(weather);
-        parcel.writeString(type.name());
+        parcel.writeSerializable(type);
     }
 
 }

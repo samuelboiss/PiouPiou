@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -58,23 +59,17 @@ public class MapActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            if (intent.hasExtra("selectBirdEvent")) {
-                isSelectedBirdEvent = intent.getBooleanExtra("selectBirdEvent", false);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            BirdEvent birdEvent = bundle.getParcelable("bird_event");
+            if (birdEvent != null) {
+                double latitude = birdEvent.getLatitude();
+                double longitude = birdEvent.getLongitude();
+                controller.initMap(latitude, longitude);
             }
         }
-        if (isSelectedBirdEvent) {
-            Bundle bundle = getIntent().getExtras();
-            if (bundle != null) {
-                BirdEvent birdEvent = bundle.getParcelable("bird_event");
-                if (birdEvent != null) {
-                    double latitude = birdEvent.getLatitude();
-                    double longitude = birdEvent.getLongitude();
-                    controller.initMap(latitude, longitude);
-                }
-            }
-        }
+
+
     }
 
     @Override
