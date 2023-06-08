@@ -82,4 +82,9 @@ public class GPSActivity extends AppCompatActivity implements IGPS, IMap {
     public void onMapClicked(GeoPoint geoPoint) {
         Log.d(TAG, "map click = " + geoPoint);
     }
+
+    public void addMarkerToMap(GeoPoint location) {
+        map.addMarker(org.osmdroid.library.R.drawable.osm_ic_follow_me_on, location, "Current Location", "", org.osmdroid.library.R.drawable.osm_ic_follow_me_on);
+    }
+
 }

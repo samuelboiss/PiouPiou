@@ -45,6 +45,9 @@ public class GPSFragment extends Fragment {
     private ImageView imageGPSGranted;
     private ImageView imageGPSActivated;
 
+
+
+
     public GPSFragment() { }
 
     private IMap mapFragment;
@@ -81,6 +84,7 @@ public class GPSFragment extends Fragment {
         boolean permissionGranted = ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
         Log.d(TAG, "permissionGranted = " + permissionGranted);
         if (permissionGranted) {
+
             imageGPSGranted.setImageResource(R.drawable.gpson);
             LocationListener listener = new LocationListener() {
                 @Override
@@ -88,6 +92,8 @@ public class GPSFragment extends Fragment {
                     currentLocation = location;
                     gpsActivity.moveCamera();
                     sendCurrentLocationToMapFragment(); // Envoyer la position actuelle à MainActivity/MapFragment
+                    GeoPoint currentLocationPoint = new GeoPoint(currentLocation.getLatitude(), currentLocation.getLongitude());
+                    gpsActivity.addMarkerToMap(currentLocationPoint);
                 }
 
                 @Override
