@@ -81,6 +81,7 @@
             android:textColor="@color/black"
             android:textSize="35sp"
             app:layout_constraintStart_toEndOf="@id/add_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -116,6 +117,7 @@
 
             android:textSize="35sp"
             app:layout_constraintStart_toEndOf="@id/draft_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -150,6 +152,7 @@
             android:textColor="@color/black"
             android:textSize="35sp"
             app:layout_constraintStart_toEndOf="@id/history_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -170,10 +173,10 @@
         android:layout_height="100dp"
         android:background="@color/grey"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/button_calendar"
+        app:layout_constraintBottom_toTopOf="@id/button_twitter"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_history">
+        app:layout_constraintTop_toBottomOf="@id/button_history">
 
         <TextView
             android:layout_width="wrap_content"
@@ -184,6 +187,7 @@
             android:textColor="@color/black"
             android:textSize="35sp"
             app:layout_constraintStart_toEndOf="@id/warning_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -199,7 +203,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/button_calendar"
+        android:id="@+id/button_twitter"
         android:layout_width="400dp"
         android:layout_height="100dp"
         android:background="@color/grey"
@@ -214,17 +218,19 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/calendar"
-            android:textColor="@color/black"
             android:textSize="35sp"
-            app:layout_constraintStart_toEndOf="@id/calendar_icon"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/twitter"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/twitter_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
-            android:id="@+id/calendar_icon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_calendar"
+            android:id="@+id/twitter_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_twitter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
@@ -241,7 +247,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_calendar">
+        app:layout_constraintTop_toBottomOf="@id/button_twitter">
 
         <TextView
             android:layout_width="wrap_content"
@@ -252,6 +258,7 @@
             android:textColor="@color/black"
             android:textSize="35sp"
             app:layout_constraintStart_toEndOf="@id/stats_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
