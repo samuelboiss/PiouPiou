@@ -7,6 +7,9 @@ import androidx.annotation.NonNull;
 
 import org.osmdroid.util.GeoPoint;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+
 public class BirdCensus extends BirdEvent implements Parcelable {
     private BirdEventType type;
 
@@ -15,9 +18,9 @@ public class BirdCensus extends BirdEvent implements Parcelable {
         this.type = BirdEventType.CENSUS;
     }
 
-    protected BirdCensus(Parcel in) throws IllegalAccessException {
+    protected BirdCensus(Parcel in) throws IllegalAccessException, UnsupportedEncodingException {
         super(in.readString(), in.readInt(), in.readString(), in.createByteArray(), in.readByte() != 0, new GeoPoint(in.readDouble(), in.readDouble()), in.readString(), in.readString());
-        this.type = BirdEventType.CENSUS;
+        this.type = BirdEventType.valueOf(in.readString());
     }
 
     public static final Creator<BirdCensus> CREATOR = new Creator<BirdCensus>() {
@@ -25,7 +28,7 @@ public class BirdCensus extends BirdEvent implements Parcelable {
         public BirdCensus createFromParcel(Parcel in) {
             try {
                 return new BirdCensus(in);
-            } catch (IllegalAccessException e) {
+            } catch (IllegalAccessException | UnsupportedEncodingException e) {
                 throw new RuntimeException(e);
             }
         }
@@ -60,5 +63,6 @@ public class BirdCensus extends BirdEvent implements Parcelable {
         parcel.writeParcelable(address, i);
         parcel.writeString(direction);
         parcel.writeString(weather);
+        parcel.writeString(type.name());
     }
 }

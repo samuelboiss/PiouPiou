@@ -59,7 +59,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/birdCensus_info"
             android:name="com.example.pioupioy.BirdEventInfo"
             android:layout_width="300dp"
@@ -68,7 +68,7 @@
             android:visibility="invisible"
             tools:layout="@layout/fragment_bird_census_info" />
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/navBar"
             android:name="com.example.pioupioy.LateralMenu"
             android:layout_width="320dp"

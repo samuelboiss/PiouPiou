@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 
 import org.osmdroid.util.GeoPoint;
 
+import java.nio.charset.StandardCharsets;
+
 public class BirdObservation extends BirdEvent implements Parcelable {
     private BirdEventType type;
 
@@ -26,7 +28,8 @@ public class BirdObservation extends BirdEvent implements Parcelable {
 
     protected BirdObservation(Parcel in) throws IllegalAccessException {
         super(in.readString(), in.readInt(), in.readString(), in.createByteArray(), in.readByte() != 0, new GeoPoint(in.readDouble(), in.readDouble()), in.readString(), in.readString());
-        this.type = BirdEventType.OBSERVATION;
+        // decryt the type
+        this.type = BirdEventType.valueOf(in.readString());
     }
 
     public static final Creator<BirdObservation> CREATOR = new Creator<BirdObservation>() {
@@ -45,7 +48,6 @@ public class BirdObservation extends BirdEvent implements Parcelable {
         }
     };
 
-
     @Override
     public int describeContents() {
         return 0;
@@ -61,7 +63,7 @@ public class BirdObservation extends BirdEvent implements Parcelable {
         parcel.writeParcelable(address, i);
         parcel.writeString(direction);
         parcel.writeString(weather);
+        parcel.writeString(type.name());
     }
-
 
 }

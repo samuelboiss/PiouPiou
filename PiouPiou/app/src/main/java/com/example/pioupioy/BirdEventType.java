@@ -1,5 +1,7 @@
 package com.example.pioupioy;
 
+import android.os.Parcel;
+
 import java.util.Arrays;
 
 public enum BirdEventType {
@@ -18,4 +20,5 @@ public enum BirdEventType {
     public static BirdEventType getFromLabel(String label) {
         return Arrays.stream(BirdEventType.values()).filter(eventType -> eventType.label.equals(label)).findFirst().orElse(null);
     }
+
 }

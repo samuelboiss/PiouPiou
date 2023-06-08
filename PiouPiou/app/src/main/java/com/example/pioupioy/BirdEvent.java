@@ -2,6 +2,7 @@ package com.example.pioupioy;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Parcelable;
 
 import com.example.pioupioy.utils.ImageUtils;
 
@@ -9,7 +10,7 @@ import org.osmdroid.util.GeoPoint;
 
 import java.nio.ByteBuffer;
 
-public abstract class BirdEvent {
+public abstract class BirdEvent implements Parcelable {
     protected String name;
     protected int numberOfBird;
     protected boolean huntable;
@@ -99,6 +100,5 @@ public abstract class BirdEvent {
     }
 
     public abstract String getLabel();
-
 
 }
