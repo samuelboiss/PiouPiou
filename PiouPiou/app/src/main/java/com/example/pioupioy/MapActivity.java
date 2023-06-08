@@ -1,14 +1,12 @@
 package com.example.pioupioy;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -22,7 +20,6 @@ import org.osmdroid.config.Configuration;
 public class MapActivity extends AppCompatActivity {
     private static final double DEFAULT_LATITUDE = 43.6152209;
     private static final double DEFAULT_LONGITUDE = 7.0727436;
-    private boolean isSelectedBirdEvent = false;
 
     private MainMapController controller;
 
