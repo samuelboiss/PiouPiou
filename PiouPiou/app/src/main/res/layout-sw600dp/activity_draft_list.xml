@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:columnCount="2"
+    android:rowCount="9"
+    android:padding="8dp"
+    android:id="@+id/bird_draft">
+
+    <TextView
+        android:id="@+id/date_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="35sp" />
+
+    <ImageView
+        android:id="@+id/bird_image_draft"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_columnSpan="2"
+        android:src="@drawable/bird_default_icon"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/type_draft_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type_string"
+        android:textColor="@color/green_700"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/type_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_columnWeight="1" />
+
+    <TextView
+        android:id="@+id/species_draft_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/species_string"
+        android:textColor="@color/green_700"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/species_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_columnWeight="1"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/numberOfBird_draft_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_bird_string"
+        android:textColor="@color/green_700"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/numberOfBird_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_columnWeight="1"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/direction_draft_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/direction_string"
+        android:textColor="@color/green_700"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/direction_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_columnWeight="1"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/weather_draft_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weather_string"
+        android:textColor="@color/green_700"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/weather_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_columnWeight="1"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/huntable_draft_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/huntable_string"
+        android:textColor="@color/green_700"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/huntable_draft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_columnWeight="1"
+        android:layout_marginStart="10dp"/>
+
+</GridLayout>

@@ -2,17 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature android:name="android.hardware.location" android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PiouPioy"
+        android:theme="@style/Theme.PiouPiou"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoadActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +29,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".connection.ConnectionActivity"/>
+
 
         <activity
-            android:name=".inscrire"
+            android:name=".connection.RegisterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.inscrire" />
@@ -32,7 +43,7 @@
         </activity>
 
         <activity
-            android:name=".oublimdp"
+            android:name=".connection.ForgetPasswordActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.oublimdp" />
@@ -40,6 +51,63 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".AddActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ajouter" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RecensementActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.recensement" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddContactActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ajoutercontact" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name=".DraftActivity"/>
+
+        <activity android:name=".PlaceMarkerActivity"/>
+
+        <activity android:name=".TwitterActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.twitter" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".GPSActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.gps" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>
